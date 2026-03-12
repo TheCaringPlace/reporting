@@ -14,43 +14,7 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="app">
-      <header>
-        <a href="https://thecaringplace.info/" target="_blank" rel="noopener" class="logo-link">
-          <img src="./logo.webp" alt="The Caring Place" class="logo" />
-        </a>
-        <div class="header-text">
-          <h1>The Caring Place</h1>
-          <p class="subtitle">Overview</p>
-        </div>
-      </header>
-
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="service-report.html">Service Report</a>
-        <a href="financials.html">Financial Report</a>
-        <a href="service-expenses.html">Expense per Household & Individual</a>
-      </nav>
-
-      <div class="grid">
-        <div class="card full-width">
-          <h2>Service summary</h2>
-          <div class="metrics" id="metrics-service"></div>
-          <a href="service-report.html" class="report-link">View Service Report →</a>
-        </div>
-        <div class="card full-width">
-          <h2>Financial summary</h2>
-          <div class="metrics" id="metrics-financial"></div>
-          <a href="financials.html" class="report-link">View Financial Report →</a>
-        </div>
-        <div class="card full-width">
-          <h2>Expense per Household & Individual</h2>
-          <p class="chart-desc">Combined expenses divided by households and individuals served. Only years with 12 months of service data.</p>
-          <div class="metrics" id="metrics-expense-per-household"></div>
-          <a href="service-expenses.html" class="report-link">View Expense per Household & Individual →</a>
-        </div>
-      </div>
-    </div>
-    <script type="module" src="/src/index.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

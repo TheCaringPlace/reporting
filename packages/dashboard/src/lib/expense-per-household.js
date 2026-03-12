@@ -17,7 +17,9 @@ export function buildServiceByYear(serviceData) {
   const monthsPerYear = {};
   for (const row of serviceData) {
     const parsed = parseDatePart(row.daterange?.from);
-    if (!parsed) continue;
+    if (!parsed) {
+      continue;
+    }
     const { year, month } = parsed;
     if (!serviceByYear[year]) {
       serviceByYear[year] = { households: 0, individuals: 0 };
@@ -44,8 +46,12 @@ export function buildExpensesByYear(expenses, type = 'all') {
   for (const row of expenses ?? []) {
     const y = row.year;
     const amt = Number(row.amount) || 0;
-    if (type === 'direct' && row.category !== 'Direct Help Expense') continue;
-    if (type === 'other' && row.category !== 'Other Expense') continue;
+    if (type === 'direct' && row.category !== 'Direct Help Expense') {
+      continue;
+    }
+    if (type === 'other' && row.category !== 'Other Expense') {
+      continue;
+    }
     if (!result[y]) result[y] = 0;
     result[y] += amt;
   }

@@ -1,0 +1,3418 @@
+{
+  "expenses": [
+    {
+      "year": 2011,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 1628.14,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 43533.1,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 1716.66,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 6875.25,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 17699.96,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1431.25,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 2002.17,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1684.11,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 696,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2011,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 39051.35,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 350,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 4677.84,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 18200,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1580.47,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 925.43,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 50,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1592.05,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 638,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2012,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 770.96,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 40679.25,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 4861.23,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 18740,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1713.93,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 1774.7,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1611.59,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 696,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2013,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 1617.52,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 37713.34,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 5666.26,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 18800.04,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1775.76,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 1996.41,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1652.05,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 696,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2014,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 899.96,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 39631.22,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 5317.76,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 20978.1,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1462.64,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 1493.84,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1881.71,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1100,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2015,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 1532.57,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 23538.59,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 4804.72,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 19972.24,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1361.46,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 2529.98,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 28.11,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1670.79,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1200,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2016,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 602.99,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 1799.66,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 19952.77,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 4761.03,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 6857.15,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 20199.96,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1813.82,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 1737.01,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1825.36,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1200,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 2222,
+      "type": "expense"
+    },
+    {
+      "year": 2017,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 821.69,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 21614.56,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 4688.64,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 7135,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 22126.62,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 2223.38,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 5645.73,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1651.85,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1100,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 4444,
+      "type": "expense"
+    },
+    {
+      "year": 2018,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 2280.12,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 18604.84,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 3271.83,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 7526.55,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 22240.19,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1593.97,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 1760.7,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1784.19,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 900,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 11110,
+      "type": "expense"
+    },
+    {
+      "year": 2019,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 1406.6,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 10550.1,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Direct Help Expense",
+      "source": "Rent paid for clients",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 4607.1,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 8188.05,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 23517.16,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 2258.1,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 3042.27,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1928.04,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1400,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 12221,
+      "type": "expense"
+    },
+    {
+      "year": 2020,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 1412.11,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 6170.94,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 5991.45,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "Metro Assistance",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "Laundry money",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "Rent Assistance",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 11941.29,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 23910.89,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1298.1,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 3266.54,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1918.4,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 6300,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 14443,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Expenses related to move and space prep.",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2021,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 861.55,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 16375.2,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 3448.76,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "Metro Assistance",
+      "amount": 6600,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "Laundry money",
+      "amount": 5488,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "Rent Assistance",
+      "amount": 9336,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 1363.71,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 26592.06,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 1494.51,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 4286.4,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 2148.95,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1200,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 12221,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Expenses related to move and space prep.",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2022,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 902.9,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 17362.02,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 5713.28,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "Metro Assistance",
+      "amount": 6600,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "Laundry money",
+      "amount": 6718,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "Rent Assistance",
+      "amount": 5200,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 28221.43,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 2664.39,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 4603.62,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 1826.55,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1200,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 12221,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Expenses related to move and space prep.",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2023,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 14543.5,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 3452.12,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "Metro Assistance",
+      "amount": 4850,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "Laundry money",
+      "amount": 4852,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "Rent Assistance",
+      "amount": 2000,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 36.75,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 31661.44,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 3883.26,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 4106.03,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 2164.7,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 1400,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 14443,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Expenses related to move and space prep.",
+      "amount": 13923.31,
+      "type": "expense"
+    },
+    {
+      "year": 2024,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 3031.17,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "Water, Gas and Electric",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "Purchases of Food for Clients",
+      "amount": 18418.25,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "Holiday meal distributions",
+      "amount": 2357.35,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "Metro Assistance",
+      "amount": 4684,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "Laundry money",
+      "amount": 5034,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "Rent Assistance",
+      "amount": 2000,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Direct Help Expense",
+      "source": "All Other Direct Help",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Monthly Pay",
+      "amount": 32176.77,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Contractors Pay:  Bookeeper, grant writer",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Employer FICA and Workers' Comp",
+      "amount": 2440.47,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Supplies, Postage and Miscellaneous",
+      "amount": 9113.59,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Truck Driver Mileage",
+      "amount": 390.8,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Telephone Expenses",
+      "amount": 2227.96,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Monthly Rent",
+      "amount": 3600,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "CASS Service Coordinator",
+      "amount": 13332,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Expenses related to move and space prep.",
+      "amount": 0,
+      "type": "expense"
+    },
+    {
+      "year": 2025,
+      "category": "Other Expense",
+      "source": "Purchase of toys",
+      "amount": 0,
+      "type": "expense"
+    }
+  ],
+  "income": [
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 8916.34,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 2800,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 6912,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 3967.48,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 1086,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 845.72,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 1467,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 22626.89,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 18867.63,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 275,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2011,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 9055,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 2750,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 5131,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 5354.26,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 897.24,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 50,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 995,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 26452,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 13345.3,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 300,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 1583.36,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 2776.72,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2012,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 1770,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 8780,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1500,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 4775,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 4168.76,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 908.45,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 28880.14,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 22017.92,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 135,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 1168.75,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 4062.2,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2013,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 1885,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 8136,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 2500,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 8282.06,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 3937.65,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 1108.35,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 730,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 22281.14,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 18924,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 2020.84,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2014,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 2075,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 7647.69,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 2500,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 4915,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 3894.2,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 851.13,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 605,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 14878.6,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 16492.5,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 775,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 1754.25,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2015,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 2100,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6270,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 2250,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 6680,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 2924.37,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 461.75,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 800,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 12515.92,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 26982.89,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 350,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3132,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2016,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 1500,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6000,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 2250,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 6952.69,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 3081.63,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 400,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 433.12,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 880.01,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 12995.22,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 21162.31,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 475,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3147,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 2222,
+      "type": "income"
+    },
+    {
+      "year": 2017,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 606,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6000,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1750,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 6550,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 4580.33,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 118.42,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 93.24,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 11733,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 21532,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 2351,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3180,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 5000,
+      "type": "income"
+    },
+    {
+      "year": 2018,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 6921.08,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 8000,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 2900,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 2702.11,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 198.29,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 13735,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 15480,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 175,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3900,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 22000,
+      "type": "income"
+    },
+    {
+      "year": 2019,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 3003,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6000,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1850,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 500,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 765.14,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 300,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 102.77,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "Pleasant Ridge United Methodist Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 25419.35,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 10325,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 32810.34,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 3310,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3600,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "CASS Donation",
+      "amount": 12000,
+      "type": "income"
+    },
+    {
+      "year": 2020,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 2620,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 4000,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 750,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 500,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 5425.42,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 15785,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 5595,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 55168.35,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 700,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3600,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Hamilton County Nonprofit Relief Grant",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Senior Service Coordinator Donations",
+      "amount": 7500,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Contributions related to cover move and space prep.",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2021,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 1630,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6000,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1450,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 7410.19,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 11790.12,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 1434,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 52192.3,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 2265,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 1950,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Hamilton County Nonprofit Relief Grant",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Senior Service Coordinator Donations",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Contributions related to cover move and space prep.",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2022,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 1934,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 4000,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1000,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 6052.4,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 17482.6,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 1235,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 43467,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 6510,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 3400,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Hamilton County Nonprofit Relief Grant",
+      "amount": 23112,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Senior Service Coordinator Donations",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Contributions related to cover move and space prep.",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2023,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 2054,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6000,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1250,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 7849.27,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 200,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 37371,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 869.41,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 30916.1,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 7025,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 2250,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Hamilton County Nonprofit Relief Grant",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Senior Service Coordinator Donations",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Contributions related to cover move and space prep.",
+      "amount": 6331.67,
+      "type": "income"
+    },
+    {
+      "year": 2024,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "Pleasant Ridge Presbyterian Church",
+      "amount": 6000,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "First Baptist Church of Kennedy Heights",
+      "amount": 1500,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "Kennedy Heights Presbyterian Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "Church of the Nativity",
+      "amount": 4442.84,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "Cornerstone Missionary Baptist",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "St. Peter's United Church of Christ",
+      "amount": 300,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "Fellowship of Jesus Christ",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Church Income",
+      "source": "All Saints Episcopal Church",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Gifts from Individuals",
+      "amount": 28589.23,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Gifts from Individuals through Facebook",
+      "amount": 7469.56,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Gifts from Organizations",
+      "amount": 29189.58,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Memorials",
+      "amount": 3737.24,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Free Store - Senior Boxes Fees",
+      "amount": 2175,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Golf Outing, net",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Hamilton County Nonprofit Relief Grant",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Senior Service Coordinator Donations",
+      "amount": 5000,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Contributions related to cover move and space prep.",
+      "amount": 0,
+      "type": "income"
+    },
+    {
+      "year": 2025,
+      "category": "Other Income",
+      "source": "Toys",
+      "amount": 0,
+      "type": "income"
+    }
+  ],
+  "years": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

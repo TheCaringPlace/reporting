@@ -377,3 +377,69 @@ select:focus {
 .data-table td {
   color: var(--text);
 }
+
+.data-table td.positive {
+  color: var(--success);
+}
+
+.data-table td.negative {
+  color: var(--danger);
+}
+
+/* Budget progress bars */
+.budget-progress {
+  margin-bottom: 1rem;
+}
+
+.progress-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+}
+
+.progress-bar-values {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.progress-bar-track {
+  position: relative;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.progress-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.on-track {
+  background: var(--success);
+}
+
+.progress-bar-fill.partial {
+  background: #eab308;
+}
+
+.progress-bar-fill.behind {
+  background: var(--danger);
+}
+
+.progress-bar-fill.over {
+  background: #eab308;
+}
+
+.progress-bar-fill.over-budget {
+  background: var(--danger);
+  left: 100%;
+  margin-left: 2px;
+}

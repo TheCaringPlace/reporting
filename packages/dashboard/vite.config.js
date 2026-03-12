@@ -1,19 +1,16 @@
 import { defineConfig } from 'vite';
+import preact from '@preact/preset-vite';
 
 export default defineConfig({
   base: './',
+  plugins: [preact()],
   server: {
     port: 5173,
     open: true,
   },
   build: {
     rollupOptions: {
-      input: {
-        main: 'index.html',
-        serviceReports: 'service-report.html',
-        financials: 'financials.html',
-        serviceExpenses: 'service-expenses.html',
-      },
+      input: 'index.html',
     },
   },
 });

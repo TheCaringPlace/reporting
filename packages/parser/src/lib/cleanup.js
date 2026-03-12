@@ -65,6 +65,7 @@ const cleanupKeys = (obj) => {
 export const consolidateReports = (reports) => {
   const monthReports = reports
     .map((report) => cleanupKeys(report))
+    .filter((report) => report.daterange)
     .filter((report) =>
       report.daterange.from.split("/")[0] === report.daterange.to.split("/")[0],
     );
