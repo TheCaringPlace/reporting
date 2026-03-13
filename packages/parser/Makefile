@@ -6,7 +6,6 @@ build: parse-reports consolidate
 
 parse-reports:
 	$(CLI) parse-reports -i reports/downloaded -o reports/parsed
-	$(CLI) parse-financial-reports -i reports/downloaded/financial-reports -o reports/parsed/financial-reports
 
 consolidate:
 	$(CLI) consolidate-reports -i reports/parsed -o reports

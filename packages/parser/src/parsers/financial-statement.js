@@ -38,20 +38,54 @@ function extractLabel(line) {
 }
 
 /**
- * Parse a data line into label and amounts (actual, budget, prior_year) for the first year column.
- * @param {string} line
- * @returns {{ label: string, actual: number, budget: number, prior_year: number } | null}
+ * Detect column order (actual, budget, prior_year) from a header line.
+ * Returns [actualIdx, budgetIdx, priorYearIdx] or null if not detected.
+ * Default assumption: amounts[0]=actual, amounts[1]=budget, amounts[2]=prior_year
+ * @param {string[]} lines
+ * @returns {[number, number, number] | null}
  */
-function parseDataLine(line) {
+function detectColumnOrder(lines) {
+  const keywords = {
+    actual: /\bactual\b/i,
+    budget: /\bbudget\b/i,
+    prior: /\bprior\b/i,
+  };
+  for (const line of lines) {
+    const actualMatch = line.match(keywords.actual);
+    const budgetMatch = line.match(keywords.budget);
+    const priorMatch = line.match(keywords.prior);
+    if (actualMatch && budgetMatch && priorMatch) {
+      const idx = (m) => (m ? m.index : Infinity);
+      const order = [
+        { k: "actual", i: idx(actualMatch) },
+        { k: "budget", i: idx(budgetMatch) },
+        { k: "prior", i: idx(priorMatch) },
+      ].sort((a, b) => a.i - b.i);
+      const actualIdx = order.findIndex((o) => o.k === "actual");
+      const budgetIdx = order.findIndex((o) => o.k === "budget");
+      const priorIdx = order.findIndex((o) => o.k === "prior");
+      return [actualIdx, budgetIdx, priorIdx];
+    }
+  }
+  return null;
+}
+
+/**
+ * Parse a data line and extract only the actual amount.
+ * Column order is detected from header when possible; default: first column = actual.
+ * @param {string} line
+ * @param {[number, number, number] | null} columnOrder - [actualIdx, budgetIdx, priorYearIdx]
+ * @returns {{ label: string, actual: number } | null}
+ */
+function parseDataLine(line, columnOrder = null) {
   const amounts = extractAmounts(line);
   const label = extractLabel(line);
-  if (!label || amounts.length < 3) return null;
+  if (!label || amounts.length < 1) return null;
 
+  const actualIdx = columnOrder ? columnOrder[0] : 0;
   return {
     label,
-    actual: parseAmount(amounts[0]),
-    budget: parseAmount(amounts[1]),
-    prior_year: parseAmount(amounts[2]),
+    actual: parseAmount(amounts[actualIdx]),
   };
 }
 
@@ -107,9 +141,7 @@ function extractYearsEnding(lines) {
 }
 
 /**
- * Parse financial statement text into structured data.
- * Extracts YTD actual, budget, and prior-year amounts for income and expenses.
- * The reporting year is extracted from the document (report period, years-ending, or column header).
+ * Parse financial statement text into structured data to extract the actual income and expense details
  *
  * @param {string} text - Raw text from the financial statement PDF
  * @returns {Object} Parsed financial statement
@@ -117,6 +149,7 @@ function extractYearsEnding(lines) {
 export function parseFinancialStatement(text) {
   const lines = toLines(text);
   const reportYear = String(extractReportYear(lines));
+  const columnOrder = detectColumnOrder(lines);
 
   const result = {
     document: {
@@ -185,13 +218,9 @@ export function parseFinancialStatement(text) {
 
     // Total Church Contributions
     if (/^Total Church Contributions\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed && result[reportYear].income.church_contributions) {
-        result[reportYear].income.church_contributions.total = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].income.church_contributions.total = parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -208,13 +237,9 @@ export function parseFinancialStatement(text) {
 
     // Total Other Income
     if (/^Total Other Income\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed && result[reportYear].income.other_income) {
-        result[reportYear].income.other_income.total = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].income.other_income.total = parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -222,13 +247,9 @@ export function parseFinancialStatement(text) {
 
     // TOTAL INCOME
     if (/^TOTAL INCOME\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed) {
-        result[reportYear].income.total_income = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].income.total_income = parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -246,13 +267,9 @@ export function parseFinancialStatement(text) {
 
     // Total Direct Help to Clients
     if (/^Total Direct Help to Clients\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed && result[reportYear].expenses.direct_help_to_clients) {
-        result[reportYear].expenses.direct_help_to_clients.total = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].expenses.direct_help_to_clients.total = parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -269,13 +286,9 @@ export function parseFinancialStatement(text) {
 
     // Total All Other Expenses
     if (/^Total All Other Expenses\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed && result[reportYear].expenses.all_other_expenses) {
-        result[reportYear].expenses.all_other_expenses.total = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].expenses.all_other_expenses.total = parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -283,13 +296,9 @@ export function parseFinancialStatement(text) {
 
     // TOTAL EXPENSES
     if (/^TOTAL EXPENSES\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed) {
-        result[reportYear].expenses.total_expenses = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].expenses.total_expenses = parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -297,48 +306,36 @@ export function parseFinancialStatement(text) {
 
     // NET INCOME / EXPENSE
     if (/^NET INCOME\s*\/\s*EXPENSE\s/i.test(line)) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed) {
-        result[reportYear].net_income_expense = {
-          actual: parsed.actual,
-          budget: parsed.budget,
-          prior_year: parsed.prior_year,
-        };
+        result[reportYear].net_income_expense = parsed.actual;
       }
       continue;
     }
 
     // Data lines: add to current subsection items
     if (currentSubsection) {
-      const parsed = parseDataLine(line);
+      const parsed = parseDataLine(line, columnOrder);
       if (parsed && !parsed.label.toLowerCase().startsWith("total")) {
         const target =
           currentMajorSection === "income"
             ? result[reportYear].income[currentSubsection]
             : result[reportYear].expenses[currentSubsection];
         if (target?.items) {
-          target.items.push({
-            name: parsed.label,
-            actual: parsed.actual,
-            budget: parsed.budget,
-            prior_year: parsed.prior_year,
-          });
+          target.items.push({ name: parsed.label, actual: parsed.actual });
         }
       }
     }
   }
 
-  // Build summary
+  // Build summary (actuals only)
   const ti = result[reportYear].income.total_income;
   const te = result[reportYear].expenses.total_expenses;
   const net = result[reportYear].net_income_expense;
   result[reportYear].summary = {
-    income_ytd_actual: ti?.actual ?? 0,
-    expenses_ytd_actual: te?.actual ?? 0,
-    net_income_ytd_actual: net?.actual ?? 0,
-    income_ytd_budget: ti?.budget ?? 0,
-    expenses_ytd_budget: te?.budget ?? 0,
-    net_income_ytd_budget: net?.budget ?? 0,
+    income_ytd_actual: typeof ti === "number" ? ti : ti?.actual ?? 0,
+    expenses_ytd_actual: typeof te === "number" ? te : te?.actual ?? 0,
+    net_income_ytd_actual: typeof net === "number" ? net : net?.actual ?? 0,
   };
 
   return result;

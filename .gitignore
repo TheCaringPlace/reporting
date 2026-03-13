@@ -3,3 +3,4 @@ node_modules/
 packages/parser/reports/
 packages/dashboard/data/
 dist/
+packages/dashboard/public/data/

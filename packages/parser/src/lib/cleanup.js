@@ -34,6 +34,9 @@ const cleanupKeys = (obj) => {
   if (typeof obj !== "object") {
     return obj;
   }
+  if (obj === null || obj === undefined) {
+    return obj;
+  }
   const entries = Object.entries(obj)
     .filter(([key]) => key !== "items" && key !== "sections")
     .map(([key, value]) => [cleanupKey(key), cleanupValue(value)]);

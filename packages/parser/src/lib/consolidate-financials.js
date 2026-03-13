@@ -239,13 +239,21 @@ export async function consolidateCurrentYearFinancials(
   const incomeCategories = ["church_contributions", "other_income"];
   const expenseCategories = ["direct_help_to_clients", "all_other_expenses"];
 
+  // Extract total_actual: parser returns total as number (actuals only)
+  const getTotalActual = (a) => {
+    if (a?.total == null) return null;
+    if (typeof a.total === "number") return a.total;
+    if (typeof a.total?.actual === "number") return a.total.actual;
+    return null;
+  };
+
   for (const cat of incomeCategories) {
     const b = budget.income?.[cat];
     const a = latestActuals?.[yearStr]?.income?.[cat];
     result.consolidated.income[cat] = {
       items: mergeItems(b?.items ?? [], a?.items ?? []),
       total_budget: typeof b?.total === "number" ? b.total : null,
-      total_actual: typeof a?.total === "number" ? a.total : null,
+      total_actual: getTotalActual(a),
     };
   }
 
@@ -255,15 +263,16 @@ export async function consolidateCurrentYearFinancials(
     result.consolidated.expenses[cat] = {
       items: mergeItems(b?.items ?? [], a?.items ?? []),
       total_budget: typeof b?.total === "number" ? b.total : null,
-      total_actual: typeof a?.total === "number" ? a.total : null,
+      total_actual: getTotalActual(a),
     };
   }
 
+  // Parser uses income_ytd_actual, expenses_ytd_actual, net_income_ytd_actual (not .income/.expenses/.net_income)
+  const s = latestActuals?.[yearStr]?.summary;
   result.consolidated.summary = {
-    income_ytd_actual: latestActuals?.[yearStr]?.summary?.income ?? null,
-    expenses_ytd_actual: latestActuals?.[yearStr]?.summary?.expenses ?? null,
-    net_income_ytd_actual:
-      latestActuals?.[yearStr]?.summary?.net_income ?? null,
+    income_ytd_actual: s?.income_ytd_actual ?? null,
+    expenses_ytd_actual: s?.expenses_ytd_actual ?? null,
+    net_income_ytd_actual: s?.net_income_ytd_actual ?? null,
   };
 
   await writeFileWithMkdir(outputPath, JSON.stringify(result, null, 2));
