@@ -4,7 +4,9 @@
 
 export function formatCurrency(n) {
   const num = Number(n);
-  if (!Number.isFinite(num)) return '$0';
+  if (!Number.isFinite(num)) {
+    return '$0';
+  }
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -18,12 +20,18 @@ export function formatCurrency(n) {
  * @returns {{ year: number, month: number } | null}
  */
 export function parseDatePart(str) {
-  if (!str) return null;
+  if (!str) {
+    return null;
+  }
   const parts = str.split('/');
-  if (parts.length < 3) return null;
+  if (parts.length < 3) {
+    return null;
+  }
   const month = parseInt(parts[0], 10);
   const year = parseInt(parts[2], 10);
-  if (isNaN(month) || isNaN(year)) return null;
+  if (isNaN(month) || isNaN(year)) {
+    return null;
+  }
   return { year, month };
 }
 
@@ -37,7 +45,9 @@ const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
  */
 export function formatPeriod({ from }) {
   const parsed = parseDatePart(from);
-  if (!parsed) return from || '—';
+  if (!parsed) {
+    return from || '—';
+  }
   return `${MONTH_NAMES[parsed.month - 1] ?? ''} ${parsed.year}`;
 }
 
@@ -47,6 +57,8 @@ export function formatPeriod({ from }) {
  * @returns {string}
  */
 export function formatYearRange(years) {
-  if (!years?.length) return '—';
+  if (!years?.length) {
+    return '—';
+  }
   return `${years[0]}–${years[years.length - 1]}`;
 }

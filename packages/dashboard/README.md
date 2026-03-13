@@ -1,24 +1,26 @@
 # The Caring Place Dashboard
 
-An interactive dashboard for visualizing consolidated report data.
+An interactive dashboard for visualizing consolidated report data. Built with Preact and client-side routing.
 
 ## Project structure
 
 ```
 dashboard/
-├── index.html          # Home page
-├── service-report.html # Service report page
-├── financials.html     # Financial report page
+├── index.html          # SPA entry
 ├── styles.css          # Shared styles
 ├── data/               # JSON data (copied by prebuild from parser)
 │   ├── service-report.json
-│   └── financials.json
+│   ├── financials.json
+│   └── current-year-financials.json
 ├── src/
-│   ├── index.js        # Home page logic
-│   ├── service-reports.js
-│   └── financials.js
+│   ├── main.jsx        # App entry, Router
+│   ├── components/     # Layout, Card, Chart, etc.
+│   ├── pages/          # Index, Financials, BudgetTracker, etc.
+│   └── lib/            # utils, charts, expense-per-household
 └── dist/               # Build output
 ```
+
+**Routes:** `/` (home), `/financials`, `/budget-tracker`, `/service-report`, `/service-expenses`
 
 ## Run locally
 

@@ -4,16 +4,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rm -rf data dist",
-    "dev": "vite",
-    "prebuild": "mkdir -p data && cp ../parser/reports/service-report.json ./data/ && cp ../parser/reports/financials.json ./data/",
+    "clean": "rm -rf public/data dist",
+    "dev": "npm run prebuild && vite",
+    "prebuild": "mkdir -p public/data && cp ../parser/reports/*.json ./public/data/",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "chart.js": "^4.4.6"
+    "chart.js": "^4.4.6",
+    "history": "^5.3.0",
+    "preact": "^10.26.0",
+    "preact-router": "^4.1.0"
   },
   "devDependencies": {
+    "@preact/preset-vite": "^2.10.0",
     "vite": "^7.3.1"
   }
 }

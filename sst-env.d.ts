@@ -6,18 +6,6 @@
 
 declare module "sst" {
   export interface Resource {
-    "Dashboard": {
-      "type": "sst.aws.StaticSite"
-      "url": string
-    }
-    "PASSWORD": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
-    "USERNAME": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
   }
 }
 /// <reference path="sst-env.d.ts" />

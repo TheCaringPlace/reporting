@@ -4,13 +4,16 @@ import { createWriteStream } from "fs";
 import { readFile } from "fs/promises";
 import { join, normalize } from "path";
 import fastcsv from "fast-csv";
-import {flatten}  from "flat";
+import { flatten } from "flat";
 import { crawlDirectory, writeFileWithMkdir } from "./lib/fs.js";
 import { extractTextFromPdf } from "./lib/pdf.js";
-import { syncFilesFromS3 } from "./lib/sync-s3.js";
+import { downloadFilesFromS3, uploadFilesToS3 } from "./lib/sync-s3.js";
 import { parseReport } from "./parsers/parse-report.js";
 import { consolidateReports } from "./lib/cleanup.js";
-import { consolidateFinancials } from "./lib/consolidate-financials.js";
+import {
+  consolidateFinancials,
+  consolidateCurrentYearFinancials,
+} from "./lib/consolidate-financials.js";
 
 program
   .name("service-report-parser")
@@ -19,6 +22,7 @@ program
 
 program
   .command("sync-s3")
+  .alias("download-s3")
   .requiredOption(
     "-b, --bucket-name <bucket-name>",
     "The name of the S3 bucket to sync",
@@ -27,12 +31,24 @@ program
     "-d, --destination-folder <destination-folder>",
     "The folder to save the synced files to",
   )
-  .option("-p, --page-size <page-size>", "The page size to use for the sync")
-  .action(async ({ bucketName, destinationFolder, pageSize }) => {
-    await syncFilesFromS3({
+  .action(async ({ bucketName, destinationFolder }) => {
+    await downloadFilesFromS3({ bucketName, destinationFolder });
+  });
+
+program
+  .command("upload-s3")
+  .requiredOption(
+    "-b, --bucket-name <bucket-name>",
+    "The name of the S3 bucket to sync",
+  )
+  .requiredOption(
+    "-d, --source-folder <source-folder>",
+    "The folder to source the files from",
+  )
+  .action(async ({ bucketName, sourceFolder }) => {
+    await uploadFilesToS3({
       bucketName,
-      destinationFolder,
-      pageSize: pageSize ? Number.parseInt(pageSize) : 100,
+      sourceFolder,
     });
   });
 
@@ -129,7 +145,10 @@ program
     const ws = createWriteStream(csvFile);
 
     fastcsv
-      .write(consolidatedReports.map(report => flatten(report)), { headers: true })
+      .write(
+        consolidatedReports.map((report) => flatten(report)),
+        { headers: true },
+      )
       .pipe(ws)
       .on("finish", () => {
         console.log(`Finished writing data to: ${csvFile}`);
@@ -149,6 +168,37 @@ program
   )
   .action(async ({ input, output }) => {
     await consolidateFinancials(input, output);
+  });
+
+program
+  .command("consolidate-current-year-financials")
+  .description(
+    "Consolidate current year financials by merging proposed budget with monthly actuals",
+  )
+  .requiredOption(
+    "-b, --budget <file>",
+    "Path to the proposed budget JSON file",
+  )
+  .requiredOption(
+    "-a, --actuals-folder <folder>",
+    "Folder containing parsed monthly financial statement JSONs",
+  )
+  .requiredOption(
+    "-o, --output <output-file>",
+    "Path for the output consolidated JSON file",
+  )
+  .option(
+    "-y, --year <year>",
+    "Year to consolidate (defaults to current calendar year)",
+    (v) => parseInt(v, 10),
+  )
+  .action(async ({ budget, actualsFolder, output, year }) => {
+    await consolidateCurrentYearFinancials(
+      budget,
+      actualsFolder,
+      output,
+      year,
+    );
   });
 
 program.parse(process.argv);
