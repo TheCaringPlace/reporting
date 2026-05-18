@@ -21,8 +21,7 @@ program
   .version("0.8.0");
 
 program
-  .command("sync-s3")
-  .alias("download-s3")
+  .command("download-s3")
   .requiredOption(
     "-b, --bucket-name <bucket-name>",
     "The name of the S3 bucket to sync",
