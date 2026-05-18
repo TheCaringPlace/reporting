@@ -284,34 +284,6 @@ export function parseFinancialStatement(text) {
       continue;
     }
 
-    // Total All Other Expenses
-    if (/^Total All Other Expenses\s/i.test(line)) {
-      const parsed = parseDataLine(line, columnOrder);
-      if (parsed && result[reportYear].expenses.all_other_expenses) {
-        result[reportYear].expenses.all_other_expenses.total = parsed.actual;
-      }
-      currentSubsection = null;
-      continue;
-    }
-
-    // TOTAL EXPENSES
-    if (/^TOTAL EXPENSES\s/i.test(line)) {
-      const parsed = parseDataLine(line, columnOrder);
-      if (parsed) {
-        result[reportYear].expenses.total_expenses = parsed.actual;
-      }
-      currentSubsection = null;
-      continue;
-    }
-
-    // NET INCOME / EXPENSE
-    if (/^NET INCOME\s*\/\s*EXPENSE\s/i.test(line)) {
-      const parsed = parseDataLine(line, columnOrder);
-      if (parsed) {
-        result[reportYear].net_income_expense = parsed.actual;
-      }
-      continue;
-    }
 
     // Data lines: add to current subsection items
     if (currentSubsection) {
@@ -327,16 +299,6 @@ export function parseFinancialStatement(text) {
       }
     }
   }
-
-  // Build summary (actuals only)
-  const ti = result[reportYear].income.total_income;
-  const te = result[reportYear].expenses.total_expenses;
-  const net = result[reportYear].net_income_expense;
-  result[reportYear].summary = {
-    income_ytd_actual: typeof ti === "number" ? ti : ti?.actual ?? 0,
-    expenses_ytd_actual: typeof te === "number" ? te : te?.actual ?? 0,
-    net_income_ytd_actual: typeof net === "number" ? net : net?.actual ?? 0,
-  };
 
   return result;
 }

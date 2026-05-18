@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from "commander";
-import { createWriteStream } from "fs";
+import { createWriteStream, existsSync } from "fs";
 import { readFile } from "fs/promises";
 import { join, normalize } from "path";
 import fastcsv from "fast-csv";
@@ -21,8 +21,7 @@ program
   .version("0.8.0");
 
 program
-  .command("sync-s3")
-  .alias("download-s3")
+  .command("download-s3")
   .requiredOption(
     "-b, --bucket-name <bucket-name>",
     "The name of the S3 bucket to sync",
@@ -98,6 +97,19 @@ program
         console.warn(`Skipping non-PDF file: ${file}`);
         continue;
       }
+
+      const targetPath = join(
+        output,
+        normalize(file).replace(normalize(input), "").replace(".pdf", ".json"),
+      );
+      if(existsSync(targetPath)) {
+
+        console.info(
+          `Report ${file} already exists, skipping...`,
+        );
+        continue;
+      }
+
       console.info(`Parsing report ${file}`);
       const result = await extractTextFromPdf(file);
 
@@ -108,10 +120,6 @@ program
         );
         continue;
       }
-      const targetPath = join(
-        output,
-        normalize(file).replace(normalize(input), "").replace(".pdf", ".json"),
-      );
       await writeFileWithMkdir(targetPath, JSON.stringify(report, null, 2));
     }
   });
@@ -130,7 +138,8 @@ program
   .action(async ({ input, output }) => {
     const files = await crawlDirectory(input);
     const reports = await Promise.all(
-      files.map(async (file) => {
+      files.filter(f => f.endsWith('.json')).map(async (file) => {
+        console.log(`Reading file: ${file}`)
         const text = await readFile(file, "utf8");
         return JSON.parse(text);
       }),

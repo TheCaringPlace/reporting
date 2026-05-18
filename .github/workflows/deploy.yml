@@ -35,8 +35,8 @@ jobs:
           aws-region: us-east-2
       - name: Install Dependencies
         run: npm ci
-      - name: Sync S3
-        run: npm run sync-s3
+      - name: Download S3
+        run: npm run download-s3
         working-directory: packages/parser
       - name: Set SST Secrets
         run: | 

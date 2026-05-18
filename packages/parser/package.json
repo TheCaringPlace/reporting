@@ -11,7 +11,8 @@
   "description": "A parser for parsing Service Reports exported from the FreeStore Foodbank's tracking system as PDFs and converting them into consumable JSON",
   "scripts": {
     "clean": "rm -rf reports dist",
-    "sync-s3": "node ./src/index.js sync-s3 -b caringplace-service-reports -d reports/downloaded",
+    "download-s3": "node ./src/index.js download-s3 -b caringplace-service-reports -d reports/",
+    "upload-s3": "node ./src/index.js upload-s3 -b caringplace-service-reports -d reports/",
     "build": "make build"
   },
   "dependencies": {

@@ -7,6 +7,11 @@ export function ProgressBar({ label, expected, actual, isIncome, monthsLabel }) 
     : pct <= 100 ? 'on-track' : pct <= 120 ? 'over' : 'over-budget';
   const fillPct = Math.min(pct, 100);
   const overflowPct = Math.min(Math.max(pct - 100, 0), 50);
+  const delta = actual - expected;
+  const deltaClass = isIncome
+    ? delta >= 0 ? 'positive' : 'negative'
+    : delta <= 0 ? 'positive' : 'negative';
+  const deltaPrefix = delta >= 0 ? '+' : '-';
 
   return (
     <div class="budget-progress">
@@ -14,6 +19,10 @@ export function ProgressBar({ label, expected, actual, isIncome, monthsLabel }) 
         <span>{label} {monthsLabel || ''}</span>
         <span class="progress-bar-values">
           {formatCurrency(actual)} / {formatCurrency(expected)} expected ({pct.toFixed(1)}%)
+          <span class={`progress-bar-delta ${deltaClass}`}>
+            {' '}
+            ({deltaPrefix}{formatCurrency(Math.abs(delta))})
+          </span>
         </span>
       </div>
       <div class="progress-bar-track">

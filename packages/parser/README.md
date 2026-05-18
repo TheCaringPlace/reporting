@@ -21,7 +21,7 @@ Run the script with:
 To consolidate all of the reports run the following commands:
 
 ```bash
-AWS_PROFILE=thecaringplace AWS_REGION=us-east-2 service-report-parser sync-s3 -b caringplace-service-reports -d reports/downloaded
+AWS_PROFILE=thecaringplace AWS_REGION=us-east-2 service-report-parser download-s3 -b caringplace-service-reports -d reports/downloaded
 service-report-parser parse-reports -i reports/downloaded -o reports/parsed
 service-report-parser consolidate-reports -i reports/parsed -o reports/consolidated.json
 ```
