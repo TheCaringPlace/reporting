@@ -208,7 +208,6 @@ export async function consolidateCurrentYearFinancials(
     const mb = parseReportMonth(b.document?.report_period);
     return ma - mb;
   });
-  const latestActuals = sortedByMonth[sortedByMonth.length - 1];
 
   const budgetContent = JSON.parse(await readFile(budgetPath, "utf8"));
   const budget = budgetContent.budget;
@@ -232,10 +231,6 @@ export async function consolidateCurrentYearFinancials(
     },
   };
 
-  if (latestActuals?.[yearStr]) {
-    result.actuals_ytd = latestActuals[yearStr];
-  }
-
   const incomeCategories = ["church_contributions", "other_income"];
   const expenseCategories = ["direct_help_to_clients", "all_other_expenses"];
 
@@ -247,32 +242,46 @@ export async function consolidateCurrentYearFinancials(
     return null;
   };
 
+  let income_ytd_actual = 0;
   for (const cat of incomeCategories) {
     const b = budget.income?.[cat];
-    const a = latestActuals?.[yearStr]?.income?.[cat];
+    const total_actual = statementsForYear.map(s => getTotalActual(s[year].income?.[cat])).reduce((p, c) => p + c, 0);
+    income_ytd_actual += total_actual;
+
+    const items = b.items.map(({name}) => {
+      const actual = statementsForYear.map(s => s[year].income?.[cat].items.find(c => c.name === name)?.actual ?? 0).reduce((p, c) => p + c, 0);
+      return {name, actual}
+    });
+
     result.consolidated.income[cat] = {
-      items: mergeItems(b?.items ?? [], a?.items ?? []),
+      items: mergeItems(b?.items ?? [], items ?? []),
       total_budget: typeof b?.total === "number" ? b.total : null,
-      total_actual: getTotalActual(a),
+      total_actual,
     };
   }
 
+  let expenses_ytd_actual = 0;
   for (const cat of expenseCategories) {
     const b = budget.expenses?.[cat];
-    const a = latestActuals?.[yearStr]?.expenses?.[cat];
+
+    const total_actual = statementsForYear.map(s => getTotalActual(s[year].expenses?.[cat])).reduce((p, c) => p + c, 0);
+    expenses_ytd_actual += total_actual;
+
+    const items = b.items.map(({name}) => {
+      const actual = statementsForYear.map(s => s[year].expenses?.[cat].items.find(c => c.name === name)?.actual ?? 0).reduce((p, c) => p + c, 0);
+      return {name, actual}
+    });
     result.consolidated.expenses[cat] = {
-      items: mergeItems(b?.items ?? [], a?.items ?? []),
+      items: mergeItems(b?.items ?? [], items ?? []),
       total_budget: typeof b?.total === "number" ? b.total : null,
-      total_actual: getTotalActual(a),
+      total_actual,
     };
   }
 
-  // Parser uses income_ytd_actual, expenses_ytd_actual, net_income_ytd_actual (not .income/.expenses/.net_income)
-  const s = latestActuals?.[yearStr]?.summary;
   result.consolidated.summary = {
-    income_ytd_actual: s?.income_ytd_actual ?? null,
-    expenses_ytd_actual: s?.expenses_ytd_actual ?? null,
-    net_income_ytd_actual: s?.net_income_ytd_actual ?? null,
+    income_ytd_actual,
+    expenses_ytd_actual,
+    net_income_ytd_actual: income_ytd_actual - expenses_ytd_actual,
   };
 
   await writeFileWithMkdir(outputPath, JSON.stringify(result, null, 2));

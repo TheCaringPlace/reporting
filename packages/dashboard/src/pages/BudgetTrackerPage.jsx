@@ -56,6 +56,101 @@ function buildCategoryData(consolidated, type, monthsFactor) {
   return { labels, budgetData, expectedData, actualData };
 }
 
+function formatCategoryLabel(key) {
+  return key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formatReportPeriod(reportPeriod) {
+  if (!reportPeriod) {
+    return 'Unknown';
+  }
+  const parsed = new Date(reportPeriod.replace(',', ''));
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  }
+  return reportPeriod;
+}
+
+function extractMonthlyCategoryTotals(section) {
+  const totals = new Map();
+  if (!section) {
+    return totals;
+  }
+  for (const [catKey, cat] of Object.entries(section)) {
+    if (!cat || typeof cat !== 'object' || !Array.isArray(cat.items)) {
+      continue;
+    }
+    const itemTotal = sumItems(cat.items, 'actual');
+    const total = typeof cat.total === 'number' ? cat.total : itemTotal;
+    totals.set(catKey, total);
+  }
+  return totals;
+}
+
+function buildCategoryTrendData(data, type) {
+  const monthlyActuals = data?.monthly_actuals ?? [];
+  if (monthlyActuals.length === 0) {
+    return { labels: [], datasets: [] };
+  }
+
+  const labels = monthlyActuals.map((month) => formatReportPeriod(month.report_period));
+  const monthlyCategoryTotals = monthlyActuals.map((month) => ({
+    income: extractMonthlyCategoryTotals(month?.data?.income),
+    expenses: extractMonthlyCategoryTotals(month?.data?.expenses),
+  }));
+
+  const typeConfig = type === 'income'
+    ? { key: 'income', label: 'Income', colors: ['#059669', '#10b981', '#047857', '#34d399'] }
+    : { key: 'expenses', label: 'Expenses', colors: ['#b94a9e', '#d946ef', '#9d174d', '#ec4899'] };
+
+  const budgetCategories = data?.budget?.[typeConfig.key] ?? {};
+  const categoryKeys = new Set(Object.keys(budgetCategories));
+  for (const month of monthlyCategoryTotals) {
+    for (const key of month[typeConfig.key].keys()) {
+      categoryKeys.add(key);
+    }
+  }
+
+  const datasets = [];
+  Array.from(categoryKeys)
+    .sort((a, b) => a.localeCompare(b))
+    .forEach((catKey, idx) => {
+      const annualBudget = sumItems(budgetCategories?.[catKey]?.items, 'budget');
+      const monthlyBudget = annualBudget / 12;
+      const actualData = monthlyCategoryTotals.map((month) => month[typeConfig.key].get(catKey) ?? 0);
+      const hasActuals = actualData.some((v) => v > 0);
+      if (!hasActuals && annualBudget <= 0) {
+        return;
+      }
+
+      const color = typeConfig.colors[idx % typeConfig.colors.length];
+      const categoryLabel = formatCategoryLabel(catKey);
+
+      datasets.push({
+        label: `${categoryLabel} Actual`,
+        data: actualData,
+        borderColor: color,
+        backgroundColor: color,
+        borderWidth: 2,
+        pointRadius: 2,
+        pointHoverRadius: 4,
+        tension: 0.25,
+      });
+      datasets.push({
+        label: `${categoryLabel} Budget`,
+        data: labels.map(() => monthlyBudget),
+        borderColor: color,
+        backgroundColor: color,
+        borderWidth: 2,
+        borderDash: [6, 4],
+        pointRadius: 0,
+        tension: 0,
+      });
+    });
+
+  return { labels, datasets };
+}
+
 function buildTableRows(categories, type, monthsFactor) {
   const rows = [];
   if (!categories) {
@@ -130,6 +225,63 @@ export default function BudgetTrackerPage() {
     };
   }, [consolidated, monthsFactor, monthsCount]);
 
+  const incomeTrendConfig = useMemo(() => {
+    const { labels, datasets } = buildCategoryTrendData(data, 'income');
+    return {
+      type: 'line',
+      data: { labels, datasets },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: (value) => formatCurrency(value),
+            },
+          },
+        },
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${formatCurrency(ctx.parsed.y)}`,
+            },
+          },
+        },
+      },
+    };
+  }, [data]);
+
+  const expenseTrendConfig = useMemo(() => {
+    const { labels, datasets } = buildCategoryTrendData(data, 'expenses');
+    return {
+      type: 'line',
+      data: { labels, datasets },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: (value) => formatCurrency(value),
+            },
+          },
+        },
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${formatCurrency(ctx.parsed.y)}`,
+            },
+          },
+        },
+      },
+    };
+  }, [data]);
+
+  const hasIncomeTrendData = incomeTrendConfig.data.labels.length > 0 && incomeTrendConfig.data.datasets.length > 0;
+  const hasExpenseTrendData = expenseTrendConfig.data.labels.length > 0 && expenseTrendConfig.data.datasets.length > 0;
+
   const tableColumns = ['Category', 'Line item', 'Annual budget', 'Expected (YTD)', 'Actual (YTD)', '% of expected', 'Variance'];
   const incomeTableRows = useMemo(() => buildTableRows(consolidated?.income, 'income', monthsFactor), [consolidated?.income, monthsFactor]);
   const expenseTableRows = useMemo(() => buildTableRows(consolidated?.expenses, 'expense', monthsFactor), [consolidated?.expenses, monthsFactor]);
@@ -157,24 +309,40 @@ export default function BudgetTrackerPage() {
   return (
     <>
       <Metrics items={metricItems} />
-      <div class="grid-half">
-        <Card title="Income: Actual vs Expected (YTD)">
-          <ProgressBar label="Income" expected={incomeExpected || incomeBudget} actual={incomeActual} isIncome monthsLabel={monthsLabel} />
-          <Chart config={incChartConfig} height="tall" />
+      <div class="grid">
+        <div class="grid-half">
+          <Card title="Income: Actual vs Expected (YTD)">
+            <ProgressBar label="Income" expected={incomeExpected || incomeBudget} actual={incomeActual} isIncome monthsLabel={monthsLabel} />
+            <Chart config={incChartConfig} height="tall" />
+          </Card>
+          <Card title="Expenses: Actual vs Expected (YTD)">
+            <ProgressBar label="Expenses" expected={expenseExpected || expenseBudget} actual={expenseActual} isIncome={false} monthsLabel={monthsLabel} />
+            <Chart config={expChartConfig} height="tall" />
+          </Card>
+        </div>
+        {(hasIncomeTrendData || hasExpenseTrendData) && (
+          <div class="grid-half">
+            {hasIncomeTrendData && (
+              <Card title="Income category trends over time">
+                <Chart config={incomeTrendConfig} height="tall" />
+              </Card>
+            )}
+            {hasExpenseTrendData && (
+              <Card title="Expense category trends over time">
+                <Chart config={expenseTrendConfig} height="tall" />
+              </Card>
+            )}
+          </div>
+        )}
+        <h3 class="section-heading">Income by category</h3>
+        <Card fullWidth>
+          <DataTable columns={tableColumns} rows={incomeTableRows} />
         </Card>
-        <Card title="Expenses: Actual vs Expected (YTD)">
-          <ProgressBar label="Expenses" expected={expenseExpected || expenseBudget} actual={expenseActual} isIncome={false} monthsLabel={monthsLabel} />
-          <Chart config={expChartConfig} height="tall" />
+        <h3 class="section-heading">Expenses by category</h3>
+        <Card fullWidth>
+          <DataTable columns={tableColumns} rows={expenseTableRows} />
         </Card>
       </div>
-      <h3 class="section-heading">Income by category</h3>
-      <Card fullWidth>
-        <DataTable columns={tableColumns} rows={incomeTableRows} />
-      </Card>
-      <h3 class="section-heading">Expenses by category</h3>
-      <Card fullWidth>
-        <DataTable columns={tableColumns} rows={expenseTableRows} />
-      </Card>
     </>
   );
 }

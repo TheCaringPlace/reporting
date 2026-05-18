@@ -404,6 +404,14 @@ select:focus {
   color: var(--text);
 }
 
+.progress-bar-delta.positive {
+  color: var(--success);
+}
+
+.progress-bar-delta.negative {
+  color: var(--danger);
+}
+
 .progress-bar-track {
   position: relative;
   height: 8px;
