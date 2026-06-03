@@ -15,6 +15,6 @@
     "sst": "sst"
   },
   "devDependencies": {
-    "sst": "^4.14.3"
+    "sst": "^4.15.2"
   }
 }
