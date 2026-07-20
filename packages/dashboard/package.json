@@ -17,7 +17,7 @@
     "preact-router": "^4.1.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.10.5",
-    "vite": "^8.1.4"
+    "@preact/preset-vite": "^2.10.6",
+    "vite": "^8.1.5"
   }
 }
