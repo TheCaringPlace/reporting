@@ -1,8 +1,7 @@
+import { readdir, readFile } from "node:fs/promises";
+import { basename, join } from "node:path";
 import { parseFile } from "fast-csv";
-import { join, basename } from "path";
-import { writeFileWithMkdir } from "./fs.js";
-import { readdir, readFile } from "fs/promises";
-import { crawlDirectory } from "./fs.js";
+import { crawlDirectory, writeFileWithMkdir } from "./fs.js";
 
 /**
  * Parse a currency amount string (e.g. " 1,628.14 " or " 43,533.10 ") to a number.
@@ -49,8 +48,8 @@ async function parseFinancialCsv(filePath) {
 export async function consolidateFinancials(inputFolder, outputPath) {
   const files = await readdir(inputFolder);
 
-  const expensesFile = files.find(
-    (f) => f.toLowerCase().endsWith("expenses.csv"),
+  const expensesFile = files.find((f) =>
+    f.toLowerCase().endsWith("expenses.csv"),
   );
   const incomeFile = files.find((f) => f.toLowerCase().endsWith("income.csv"));
 
@@ -74,10 +73,7 @@ export async function consolidateFinancials(inputFolder, outputPath) {
   const income = incomeRaw.map((r) => ({ ...r, type: "income" }));
 
   const allYears = [
-    ...new Set([
-      ...expenses.map((r) => r.year),
-      ...income.map((r) => r.year),
-    ]),
+    ...new Set([...expenses.map((r) => r.year), ...income.map((r) => r.year)]),
   ].sort((a, b) => a - b);
 
   const result = {
@@ -179,7 +175,6 @@ export async function consolidateCurrentYearFinancials(
   outputPath,
   year = parseYearFromPath(budgetPath) ?? new Date().getFullYear(),
 ) {
-
   const actualsFiles = await crawlDirectory(actualsFolder);
   const financialStatements = await Promise.all(
     actualsFiles
@@ -245,12 +240,20 @@ export async function consolidateCurrentYearFinancials(
   let income_ytd_actual = 0;
   for (const cat of incomeCategories) {
     const b = budget.income?.[cat];
-    const total_actual = statementsForYear.map(s => getTotalActual(s[year].income?.[cat])).reduce((p, c) => p + c, 0);
+    const total_actual = statementsForYear
+      .map((s) => getTotalActual(s[year].income?.[cat]))
+      .reduce((p, c) => p + c, 0);
     income_ytd_actual += total_actual;
 
-    const items = b.items.map(({name}) => {
-      const actual = statementsForYear.map(s => s[year].income?.[cat].items.find(c => c.name === name)?.actual ?? 0).reduce((p, c) => p + c, 0);
-      return {name, actual}
+    const items = b.items.map(({ name }) => {
+      const actual = statementsForYear
+        .map(
+          (s) =>
+            s[year].income?.[cat].items.find((c) => c.name === name)?.actual ??
+            0,
+        )
+        .reduce((p, c) => p + c, 0);
+      return { name, actual };
     });
 
     result.consolidated.income[cat] = {
@@ -264,12 +267,20 @@ export async function consolidateCurrentYearFinancials(
   for (const cat of expenseCategories) {
     const b = budget.expenses?.[cat];
 
-    const total_actual = statementsForYear.map(s => getTotalActual(s[year].expenses?.[cat])).reduce((p, c) => p + c, 0);
+    const total_actual = statementsForYear
+      .map((s) => getTotalActual(s[year].expenses?.[cat]))
+      .reduce((p, c) => p + c, 0);
     expenses_ytd_actual += total_actual;
 
-    const items = b.items.map(({name}) => {
-      const actual = statementsForYear.map(s => s[year].expenses?.[cat].items.find(c => c.name === name)?.actual ?? 0).reduce((p, c) => p + c, 0);
-      return {name, actual}
+    const items = b.items.map(({ name }) => {
+      const actual = statementsForYear
+        .map(
+          (s) =>
+            s[year].expenses?.[cat].items.find((c) => c.name === name)
+              ?.actual ?? 0,
+        )
+        .reduce((p, c) => p + c, 0);
+      return { name, actual };
     });
     result.consolidated.expenses[cat] = {
       items: mergeItems(b?.items ?? [], items ?? []),

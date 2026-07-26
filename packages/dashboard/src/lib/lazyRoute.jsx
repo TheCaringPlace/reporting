@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useEffect, useState } from "preact/hooks";
 
 /**
  * Lazy-load a route component with a loading fallback.

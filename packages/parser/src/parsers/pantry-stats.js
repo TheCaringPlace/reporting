@@ -21,7 +21,7 @@ export function parsePantryStats(text) {
 
     // Date range: "1/1/2025 to 1/31/2025"
     const dateMatch = line.match(
-      /^(\d{1,2}\/\d{1,2}\/\d{4})\s+to\s+(\d{1,2}\/\d{1,2}\/\d{4})$/
+      /^(\d{1,2}\/\d{1,2}\/\d{4})\s+to\s+(\d{1,2}\/\d{1,2}\/\d{4})$/,
     );
     if (dateMatch) {
       result.dateRange = { from: dateMatch[1], to: dateMatch[2] };
@@ -30,9 +30,7 @@ export function parsePantryStats(text) {
 
     // Section header with first row on same line
     // e.g. "A. Number of households 	75	Households without children"
-    const sectionWithData = line.match(
-      /^([A-F])\.\s+(.+?)\s+(\d+)\s+(.+)$/
-    );
+    const sectionWithData = line.match(/^([A-F])\.\s+(.+?)\s+(\d+)\s+(.+)$/);
     if (sectionWithData) {
       const title = sectionWithData[2].trim();
       i = consumeLabeledCountSection(
@@ -44,7 +42,7 @@ export function parsePantryStats(text) {
         {
           label: sectionWithData[4].trim(),
           count: parseInt(sectionWithData[3], 10),
-        }
+        },
       );
       continue;
     }
@@ -53,14 +51,9 @@ export function parsePantryStats(text) {
     const sectionMatch = line.match(/^([A-F])\.\s+(.+)$/);
     if (sectionMatch) {
       const title = sectionMatch[2].trim();
-      i = consumeLabeledCountSection(
-        lines,
-        i,
-        result,
-        title,
-        (l) => /^[A-F]\.\s+/.test(l)
+      i = consumeLabeledCountSection(lines, i, result, title, (l) =>
+        /^[A-F]\.\s+/.test(l),
       );
-      continue;
     }
   }
 

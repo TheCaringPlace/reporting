@@ -1,8 +1,8 @@
+import { parseFinancialStatement } from "../parsers/financial-statement.js";
+import { identifyReport } from "../parsers/identify.js";
 import { parsePantryStats } from "../parsers/pantry-stats.js";
 import { parseProgramStats } from "../parsers/program-stats.js";
 import { parseServiceSummary } from "../parsers/service-summary.js";
-import { parseFinancialStatement } from "../parsers/financial-statement.js";
-import { identifyReport } from "../parsers/identify.js";
 
 /**
  * @typedef {Object} TextResult

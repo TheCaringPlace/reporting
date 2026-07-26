@@ -21,7 +21,7 @@ export function parseProgramStats(text) {
 
     // Date range: "All people active from 1/1/2026 to 1/31/2026"
     const dateMatch = line.match(
-      /All people active from (\d{1,2}\/\d{1,2}\/\d{4}) to (\d{1,2}\/\d{1,2}\/\d{4})/
+      /All people active from (\d{1,2}\/\d{1,2}\/\d{4}) to (\d{1,2}\/\d{1,2}\/\d{4})/,
     );
     if (dateMatch) {
       result.dateRange = { from: dateMatch[1], to: dateMatch[2] };
@@ -32,14 +32,9 @@ export function parseProgramStats(text) {
     const sectionMatch = line.match(/^(\d+)\.\s+(.+?)(?:\s+People)?\s*$/);
     if (sectionMatch) {
       const title = sectionMatch[2].trim();
-      i = consumeLabeledCountSection(
-        lines,
-        i,
-        result,
-        title,
-        (l) => /^\d+\.\s+/.test(l)
+      i = consumeLabeledCountSection(lines, i, result, title, (l) =>
+        /^\d+\.\s+/.test(l),
       );
-      continue;
     }
   }
 

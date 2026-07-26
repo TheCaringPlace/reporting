@@ -1,19 +1,19 @@
 #!/usr/bin/env node
+import { createWriteStream, existsSync } from "node:fs";
+import { readFile } from "node:fs/promises";
+import { join, normalize } from "node:path";
 import { program } from "commander";
-import { createWriteStream, existsSync } from "fs";
-import { readFile } from "fs/promises";
-import { join, normalize } from "path";
 import fastcsv from "fast-csv";
 import { flatten } from "flat";
+import { consolidateReports } from "./lib/cleanup.js";
+import {
+  consolidateCurrentYearFinancials,
+  consolidateFinancials,
+} from "./lib/consolidate-financials.js";
 import { crawlDirectory, writeFileWithMkdir } from "./lib/fs.js";
 import { extractTextFromPdf } from "./lib/pdf.js";
 import { downloadFilesFromS3, uploadFilesToS3 } from "./lib/sync-s3.js";
 import { parseReport } from "./parsers/parse-report.js";
-import { consolidateReports } from "./lib/cleanup.js";
-import {
-  consolidateFinancials,
-  consolidateCurrentYearFinancials,
-} from "./lib/consolidate-financials.js";
 
 program
   .name("service-report-parser")
@@ -72,7 +72,7 @@ program
       const text = await extractTextFromPdf(file);
       const targetPath = join(
         output,
-        file.replace(input + "/", "").replace(".pdf", ".txt"),
+        file.replace(`${input}/`, "").replace(".pdf", ".txt"),
       );
       console.info(`Saving text to ${targetPath}`);
       await writeFileWithMkdir(targetPath, text.text);
@@ -102,11 +102,8 @@ program
         output,
         normalize(file).replace(normalize(input), "").replace(".pdf", ".json"),
       );
-      if(existsSync(targetPath)) {
-
-        console.info(
-          `Report ${file} already exists, skipping...`,
-        );
+      if (existsSync(targetPath)) {
+        console.info(`Report ${file} already exists, skipping...`);
         continue;
       }
 
@@ -138,11 +135,13 @@ program
   .action(async ({ input, output }) => {
     const files = await crawlDirectory(input);
     const reports = await Promise.all(
-      files.filter(f => f.endsWith('.json')).map(async (file) => {
-        console.log(`Reading file: ${file}`)
-        const text = await readFile(file, "utf8");
-        return JSON.parse(text);
-      }),
+      files
+        .filter((f) => f.endsWith(".json"))
+        .map(async (file) => {
+          console.log(`Reading file: ${file}`);
+          const text = await readFile(file, "utf8");
+          return JSON.parse(text);
+        }),
     );
     const consolidatedReports = consolidateReports(reports);
     await writeFileWithMkdir(
@@ -202,12 +201,7 @@ program
     (v) => parseInt(v, 10),
   )
   .action(async ({ budget, actualsFolder, output, year }) => {
-    await consolidateCurrentYearFinancials(
-      budget,
-      actualsFolder,
-      output,
-      year,
-    );
+    await consolidateCurrentYearFinancials(budget, actualsFolder, output, year);
   });
 
 program.parse(process.argv);

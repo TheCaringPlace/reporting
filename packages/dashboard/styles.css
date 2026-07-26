@@ -20,7 +20,7 @@
 
 body {
   margin: 0;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -152,7 +152,7 @@ header .header-text {
   color: var(--text);
 }
 
-.year-sliders input[type='range'] {
+.year-sliders input[type="range"] {
   flex: 1;
   height: 6px;
   -webkit-appearance: none;
@@ -161,7 +161,7 @@ header .header-text {
   border-radius: 3px;
 }
 
-.year-sliders input[type='range']::-webkit-slider-thumb {
+.year-sliders input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 18px;
@@ -173,7 +173,7 @@ header .header-text {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.year-sliders input[type='range']::-moz-range-thumb {
+.year-sliders input[type="range"]::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -183,15 +183,15 @@ header .header-text {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.year-sliders input[type='range']:focus {
+.year-sliders input[type="range"]:focus {
   outline: none;
 }
 
-.year-sliders input[type='range']:focus::-webkit-slider-thumb {
+.year-sliders input[type="range"]:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-.year-sliders input[type='range']:focus::-moz-range-thumb {
+.year-sliders input[type="range"]:focus::-moz-range-thumb {
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 

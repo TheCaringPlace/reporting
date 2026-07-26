@@ -107,14 +107,16 @@ function isSeparator(line) {
 function extractReportYear(lines) {
   for (const line of lines) {
     const periodMatch = line.match(
-      /(?:January|February|March|April|May|June|July|August|September|October|November|December),\s*(\d{4})/i
+      /(?:January|February|March|April|May|June|July|August|September|October|November|December),\s*(\d{4})/i,
     );
     if (periodMatch && line.includes("YEAR TO DATE")) {
       return parseInt(periodMatch[1], 10);
     }
   }
   for (const line of lines) {
-    const yearsMatch = line.match(/YEARS?\s+ENDING\s+DECEMBER\s+31[,\s]+(\d{4})/i);
+    const yearsMatch = line.match(
+      /YEARS?\s+ENDING\s+DECEMBER\s+31[,\s]+(\d{4})/i,
+    );
     if (yearsMatch) return parseInt(yearsMatch[1], 10);
   }
   for (const line of lines) {
@@ -186,7 +188,7 @@ export function parseFinancialStatement(text) {
 
     // Extract report period (e.g. "February, 2026" near "YEAR TO DATE" in footer)
     const periodWithYtd = line.match(
-      /((?:January|February|March|April|May|June|July|August|September|October|November|December),\s*\d{4})\s+.*YEAR TO DATE/i
+      /((?:January|February|March|April|May|June|July|August|September|October|November|December),\s*\d{4})\s+.*YEAR TO DATE/i,
     );
     if (periodWithYtd) {
       result.document.report_period = periodWithYtd[1];
@@ -200,7 +202,10 @@ export function parseFinancialStatement(text) {
     }
 
     // Section: EXPENSES
-    if (/^EXPENSES\b/.test(line.trim()) && !/^TOTAL EXPENSES/.test(line.trim())) {
+    if (
+      /^EXPENSES\b/.test(line.trim()) &&
+      !/^TOTAL EXPENSES/.test(line.trim())
+    ) {
       currentMajorSection = "expenses";
       currentSubsection = null;
       continue;
@@ -269,7 +274,8 @@ export function parseFinancialStatement(text) {
     if (/^Total Direct Help to Clients\s/i.test(line)) {
       const parsed = parseDataLine(line, columnOrder);
       if (parsed && result[reportYear].expenses.direct_help_to_clients) {
-        result[reportYear].expenses.direct_help_to_clients.total = parsed.actual;
+        result[reportYear].expenses.direct_help_to_clients.total =
+          parsed.actual;
       }
       currentSubsection = null;
       continue;
@@ -283,7 +289,6 @@ export function parseFinancialStatement(text) {
       currentSubsection = "all_other_expenses";
       continue;
     }
-
 
     // Data lines: add to current subsection items
     if (currentSubsection) {

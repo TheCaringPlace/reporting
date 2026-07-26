@@ -1,0 +1,46 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.5/schema.json",
+  "files": {
+    "includes": [
+      "packages/**/*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,css}",
+      "stacks/**/*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,css}",
+      "scripts/**/*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,css}",
+      "sst.config.ts",
+      "*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,css}",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/coverage",
+      "!**/test-results",
+      "!**/playwright-report",
+      "!packages/frontend/.astro",
+      "!packages/classifier/data",
+      "!**/sst-env.d.ts"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "assist": {
+    "enabled": true
+  }
+}

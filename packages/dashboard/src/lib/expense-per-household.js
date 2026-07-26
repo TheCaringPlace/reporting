@@ -3,7 +3,7 @@
  * Aggregates service and financial data, filtering to years with full 12 months of service data.
  */
 
-import { parseDatePart } from './utils.js';
+import { parseDatePart } from "./utils.js";
 
 const FULL_MONTHS = 12;
 
@@ -41,15 +41,15 @@ export function buildServiceByYear(serviceData) {
  * @param {'all' | 'direct' | 'other'} [type='all'] - Filter by category
  * @returns {Record<number, number>}
  */
-export function buildExpensesByYear(expenses, type = 'all') {
+export function buildExpensesByYear(expenses, type = "all") {
   const result = {};
   for (const row of expenses ?? []) {
     const y = row.year;
     const amt = Number(row.amount) || 0;
-    if (type === 'direct' && row.category !== 'Direct Help Expense') {
+    if (type === "direct" && row.category !== "Direct Help Expense") {
       continue;
     }
-    if (type === 'other' && row.category !== 'Other Expense') {
+    if (type === "other" && row.category !== "Other Expense") {
       continue;
     }
     if (!result[y]) result[y] = 0;
@@ -64,7 +64,10 @@ export function buildExpensesByYear(expenses, type = 'all') {
  * @param {number[]} yearsWithFullServiceData
  * @returns {number[]}
  */
-export function getExpensePerHouseholdYears(expensesByYear, yearsWithFullServiceData) {
+export function getExpensePerHouseholdYears(
+  expensesByYear,
+  yearsWithFullServiceData,
+) {
   return [
     ...new Set([
       ...Object.keys(expensesByYear).map(Number),
@@ -72,6 +75,8 @@ export function getExpensePerHouseholdYears(expensesByYear, yearsWithFullService
     ]),
   ]
     .filter((y) => y > 0)
-    .filter((y) => expensesByYear[y] != null && yearsWithFullServiceData.includes(y))
+    .filter(
+      (y) => expensesByYear[y] != null && yearsWithFullServiceData.includes(y),
+    )
     .sort((a, b) => a - b);
 }

@@ -5,11 +5,11 @@
 export function formatCurrency(n) {
   const num = Number(n);
   if (!Number.isFinite(num)) {
-    return '$0';
+    return "$0";
   }
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
     maximumFractionDigits: 0,
   }).format(num);
 }
@@ -23,19 +23,32 @@ export function parseDatePart(str) {
   if (!str) {
     return null;
   }
-  const parts = str.split('/');
+  const parts = str.split("/");
   if (parts.length < 3) {
     return null;
   }
   const month = parseInt(parts[0], 10);
   const year = parseInt(parts[2], 10);
-  if (isNaN(month) || isNaN(year)) {
+  if (Number.isNaN(month) || Number.isNaN(year)) {
     return null;
   }
   return { year, month };
 }
 
-const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTH_NAMES = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 /**
  * Format a daterange for display (e.g. "Jan 2025").
@@ -46,9 +59,9 @@ const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 export function formatPeriod({ from }) {
   const parsed = parseDatePart(from);
   if (!parsed) {
-    return from || '—';
+    return from || "—";
   }
-  return `${MONTH_NAMES[parsed.month - 1] ?? ''} ${parsed.year}`;
+  return `${MONTH_NAMES[parsed.month - 1] ?? ""} ${parsed.year}`;
 }
 
 /**
@@ -58,7 +71,7 @@ export function formatPeriod({ from }) {
  */
 export function formatYearRange(years) {
   if (!years?.length) {
-    return '—';
+    return "—";
   }
   return `${years[0]}–${years[years.length - 1]}`;
 }

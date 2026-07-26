@@ -30,7 +30,7 @@ function parseClientTypesLine(line, state) {
     return null;
   }
   if (state.pending && !/^[a-e]\./i.test(line)) {
-    state.pending = state.pending + " " + line.trim();
+    state.pending = `${state.pending} ${line.trim()}`;
     return null;
   }
   return null;
@@ -67,7 +67,7 @@ export function parseServiceSummary(text) {
     const line = lines[i];
 
     const dateMatch = line.match(
-      /^(\d{1,2}\/\d{1,2}\/\d{4})\s+to\s+(\d{1,2}\/\d{1,2}\/\d{4})$/
+      /^(\d{1,2}\/\d{1,2}\/\d{4})\s+to\s+(\d{1,2}\/\d{1,2}\/\d{4})$/,
     );
     if (dateMatch) {
       result.dateRange = { from: dateMatch[1], to: dateMatch[2] };
@@ -83,7 +83,7 @@ export function parseServiceSummary(text) {
         "Client types",
         NEXT_SECTION,
         null,
-        { parseDataLine: parseClientTypesLine, state: clientTypesState }
+        { parseDataLine: parseClientTypesLine, state: clientTypesState },
       );
       const section = result.sections["Client types"];
       if (clientTypesState.pending) {
@@ -100,7 +100,7 @@ export function parseServiceSummary(text) {
         "Client visit frequency",
         NEXT_SECTION,
         null,
-        { parseDataLine: parseClientVisitFrequencyLine }
+        { parseDataLine: parseClientVisitFrequencyLine },
       );
       continue;
     }
@@ -113,7 +113,7 @@ export function parseServiceSummary(text) {
         "Services",
         NEXT_SECTION,
         null,
-        { parseDataLine: parseServicesLine }
+        { parseDataLine: parseServicesLine },
       );
       continue;
     }
@@ -133,7 +133,6 @@ export function parseServiceSummary(text) {
         result.operatingDays = parseInt(numMatch[1], 10);
         i++;
       }
-      continue;
     }
   }
 

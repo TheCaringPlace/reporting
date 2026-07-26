@@ -23,7 +23,7 @@ export function consumeLabeledCountSection(
   title,
   nextSectionTest,
   initialItem,
-  options = {}
+  options = {},
 ) {
   const { parseDataLine, state = {} } = options;
 

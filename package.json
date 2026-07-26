@@ -11,10 +11,15 @@
   "scripts": {
     "clean": "npm run clean --workspaces",
     "deploy": "sst deploy",
+    "dev": "sst dev",
     "build": "npm run build --workspaces",
-    "sst": "sst"
+    "sst": "sst",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "lint:fix:all": "biome check --write --unsafe ."
   },
   "devDependencies": {
+    "@biomejs/biome": "2.5.5",
     "sst": "^4.17.1"
   }
 }
