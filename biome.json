@@ -11,9 +11,7 @@
       "!**/node_modules",
       "!**/coverage",
       "!**/test-results",
-      "!**/playwright-report",
       "!packages/frontend/.astro",
-      "!packages/classifier/data",
       "!**/sst-env.d.ts"
     ]
   },
