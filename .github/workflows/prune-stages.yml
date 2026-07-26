@@ -31,6 +31,6 @@ jobs:
           aws-region: us-east-2
 
       - name: Prune stale SST stages
-        run: pnpm dlx sst-stage-prune@1.0.2 cleanup-pr-stages --pkg-mgr pnpm
+        run: npx sst-stage-prune@1.0.2 cleanup-pr-stages
         env:
           GH_TOKEN: ${{ github.token }}
