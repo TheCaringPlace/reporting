@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import { PDFParse } from 'pdf-parse';
+import fs from "node:fs/promises";
+import { PDFParse } from "pdf-parse";
 
 /**
  * @typedef {Object} TextResult
@@ -17,6 +17,6 @@ export const extractTextFromPdf = async (filePath) => {
   const parser = new PDFParse({
     data: dataBuffer,
   });
-  const data = await parser.getText()
-  return data; 
+  const data = await parser.getText();
+  return data;
 };

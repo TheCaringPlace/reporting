@@ -1,20 +1,20 @@
-import { useRef, useEffect } from 'preact/hooks';
 import {
-  Chart as ChartJS,
+  ArcElement,
   BarController,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  DoughnutController,
+  Filler,
+  Legend,
+  LinearScale,
   LineController,
   LineElement,
   PointElement,
-  DoughnutController,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  Filler,
-  Legend,
   Tooltip,
-} from 'chart.js';
-import { chartDefaults } from '../lib/charts.js';
+} from "chart.js";
+import { useEffect, useRef } from "preact/hooks";
+import { chartDefaults } from "../lib/charts.js";
 
 ChartJS.register(
   BarController,
@@ -28,10 +28,10 @@ ChartJS.register(
   LinearScale,
   Filler,
   Legend,
-  Tooltip
+  Tooltip,
 );
 
-export function Chart({ config, height = 'tall' }) {
+export function Chart({ config, height = "tall" }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {

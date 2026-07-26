@@ -1,14 +1,14 @@
+import { createHash } from "node:crypto";
+import { readFile } from "node:fs/promises";
+import { join, relative } from "node:path";
 import {
   DeleteObjectCommand,
   GetObjectCommand,
   HeadObjectCommand,
   PutObjectCommand,
-  S3Client,
   paginateListObjectsV2,
+  S3Client,
 } from "@aws-sdk/client-s3";
-import { createHash } from "crypto";
-import { readFile } from "fs/promises";
-import { join, relative } from "path";
 import { crawlDirectory, writeFileWithMkdir } from "./fs.js";
 
 /**
@@ -54,8 +54,7 @@ export const downloadFilesFromS3 = async ({
  * @param {Buffer} buffer
  * @returns {string} MD5 hex string
  */
-const md5Hex = (buffer) =>
-  createHash("md5").update(buffer).digest("hex");
+const md5Hex = (buffer) => createHash("md5").update(buffer).digest("hex");
 
 /**
  * Upload files from a local folder to an S3 bucket.
@@ -66,9 +65,7 @@ const md5Hex = (buffer) =>
  * @param {{ bucketName: string, sourceFolder: string }}
  */
 export const uploadFilesToS3 = async ({ bucketName, sourceFolder }) => {
-  console.info(
-    `Syncing files from ${sourceFolder} to S3 bucket ${bucketName}`,
-  );
+  console.info(`Syncing files from ${sourceFolder} to S3 bucket ${bucketName}`);
   const client = new S3Client({});
   const files = await crawlDirectory(sourceFolder);
   const localKeys = new Set(
@@ -79,7 +76,9 @@ export const uploadFilesToS3 = async ({ bucketName, sourceFolder }) => {
   console.info(`Found ${files.length} local file(s)`);
 
   // Remove files from S3 that are not present locally
-  console.info("Scanning S3 for files to remove (present in S3 but not locally)…");
+  console.info(
+    "Scanning S3 for files to remove (present in S3 but not locally)…",
+  );
   let deletedCount = 0;
   for await (const page of paginateListObjectsV2(
     { client, pageSize: 1000 },

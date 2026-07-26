@@ -13,7 +13,7 @@ export function identifyReport(text) {
   if (text.includes("Service summary")) {
     return "service-summary";
   }
-  if(text.includes("COMPARATIVE MONTHLY FINANCIAL REPORT")) {
+  if (text.includes("COMPARATIVE MONTHLY FINANCIAL REPORT")) {
     return "financial-statement";
   }
   return null;

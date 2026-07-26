@@ -5,7 +5,7 @@
 export const chartDefaults = {
   responsive: true,
   maintainAspectRatio: false,
-  plugins: { legend: { position: 'bottom' } },
+  plugins: { legend: { position: "bottom" } },
 };
 
 /**

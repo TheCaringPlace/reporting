@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useEffect, useState } from "preact/hooks";
 
 /**
  * Fetch JSON from a URL. Returns { data, loading, error }.

@@ -1,35 +1,41 @@
-import { useState, useMemo, useEffect } from 'preact/hooks';
-import { useFetchJson } from '../lib/useFetchJson.js';
-import { formatCurrency } from '../lib/utils.js';
-import { chartDefaults } from '../lib/charts.js';
+import { useEffect, useMemo, useState } from "preact/hooks";
+import { Card } from "../components/Card.jsx";
+import { Chart } from "../components/Chart.jsx";
+import { DataTable } from "../components/DataTable.jsx";
+import { Metrics } from "../components/Metric.jsx";
+import { YearRangeFilter } from "../components/YearRangeFilter.jsx";
+import { chartDefaults } from "../lib/charts.js";
 import {
-  buildServiceByYear,
   buildExpensesByYear,
+  buildServiceByYear,
   getExpensePerHouseholdYears,
-} from '../lib/expense-per-household.js';
-import { Metrics } from '../components/Metric.jsx';
-import { Card } from '../components/Card.jsx';
-import { Chart } from '../components/Chart.jsx';
-import { DataTable } from '../components/DataTable.jsx';
-import { YearRangeFilter } from '../components/YearRangeFilter.jsx';
+} from "../lib/expense-per-household.js";
+import { useFetchJson } from "../lib/useFetchJson.js";
+import { formatCurrency } from "../lib/utils.js";
 
 export default function ServiceExpensesPage() {
-  const f = useFetchJson('./data/financials.json');
-  const s = useFetchJson('./data/service-report.json');
+  const f = useFetchJson("./data/financials.json");
+  const s = useFetchJson("./data/service-report.json");
   const dataLoading = f.loading || s.loading;
   const dataError = f.error ?? s.error;
 
-  const { serviceByYear, expensesByYear, allYears, minYear, maxYear } = useMemo(() => {
-    const financialData = f.data ?? { expenses: [] };
-    const serviceData = s.data ?? [];
-    const { serviceByYear: sy, yearsWithFullServiceData } = buildServiceByYear(serviceData);
-    const expensesByYear = buildExpensesByYear(financialData.expenses);
-    const allYears = getExpensePerHouseholdYears(expensesByYear, yearsWithFullServiceData);
-    const defaultYear = new Date().getFullYear();
-    const minYear = allYears.length > 0 ? Math.min(...allYears) : defaultYear - 5;
-    const maxYear = allYears.length > 0 ? Math.max(...allYears) : defaultYear;
-    return { serviceByYear: sy, expensesByYear, allYears, minYear, maxYear };
-  }, [f.data, s.data]);
+  const { serviceByYear, expensesByYear, allYears, minYear, maxYear } =
+    useMemo(() => {
+      const financialData = f.data ?? { expenses: [] };
+      const serviceData = s.data ?? [];
+      const { serviceByYear: sy, yearsWithFullServiceData } =
+        buildServiceByYear(serviceData);
+      const expensesByYear = buildExpensesByYear(financialData.expenses);
+      const allYears = getExpensePerHouseholdYears(
+        expensesByYear,
+        yearsWithFullServiceData,
+      );
+      const defaultYear = new Date().getFullYear();
+      const minYear =
+        allYears.length > 0 ? Math.min(...allYears) : defaultYear - 5;
+      const maxYear = allYears.length > 0 ? Math.max(...allYears) : defaultYear;
+      return { serviceByYear: sy, expensesByYear, allYears, minYear, maxYear };
+    }, [f.data, s.data]);
 
   const [yearStart, setYearStart] = useState(minYear);
   const [yearEnd, setYearEnd] = useState(maxYear);
@@ -65,22 +71,42 @@ export default function ServiceExpensesPage() {
     const totalExpenses = rows.reduce((s, r) => s + r.expenses, 0);
     const totalHouseholds = rows.reduce((s, r) => s + r.households, 0);
     const totalIndividuals = rows.reduce((s, r) => s + r.individuals, 0);
-    const avgPerHousehold = totalHouseholds > 0 ? totalExpenses / totalHouseholds : null;
-    const avgPerIndividual = totalIndividuals > 0 ? totalExpenses / totalIndividuals : null;
+    const avgPerHousehold =
+      totalHouseholds > 0 ? totalExpenses / totalHouseholds : null;
+    const avgPerIndividual =
+      totalIndividuals > 0 ? totalExpenses / totalIndividuals : null;
     return [
-      { value: formatCurrency(avgPerHousehold ?? 0), label: 'Expenses per household' },
-      { value: formatCurrency(avgPerIndividual ?? 0), label: 'Expenses per individual' },
-      { value: totalHouseholds.toLocaleString(), label: 'Households served (selected range)' },
-      { value: totalIndividuals.toLocaleString(), label: 'Individuals served (selected range)' },
+      {
+        value: formatCurrency(avgPerHousehold ?? 0),
+        label: "Expenses per household",
+      },
+      {
+        value: formatCurrency(avgPerIndividual ?? 0),
+        label: "Expenses per individual",
+      },
+      {
+        value: totalHouseholds.toLocaleString(),
+        label: "Households served (selected range)",
+      },
+      {
+        value: totalIndividuals.toLocaleString(),
+        label: "Individuals served (selected range)",
+      },
     ];
   }, [rows]);
 
   const chartConfigs = useMemo(() => {
-    const perHouseholdData = rows.map((r) => (r.perHousehold != null ? Math.round(r.perHousehold) : null));
-    const perIndividualData = rows.map((r) => (r.perIndividual != null ? Math.round(r.perIndividual) : null));
+    const perHouseholdData = rows.map((r) =>
+      r.perHousehold != null ? Math.round(r.perHousehold) : null,
+    );
+    const perIndividualData = rows.map((r) =>
+      r.perIndividual != null ? Math.round(r.perIndividual) : null,
+    );
 
     const peoplePerHouseholdData = rows.map((r) =>
-      r.households > 0 ? Number((r.individuals / r.households).toFixed(1)) : null
+      r.households > 0
+        ? Number((r.individuals / r.households).toFixed(1))
+        : null,
     );
 
     const yoyLabels = [];
@@ -92,11 +118,19 @@ export default function ServiceExpensesPage() {
       yoyLabels.push(`${prev.year}→${curr.year}`);
       const pctHousehold =
         prev.perHousehold != null && prev.perHousehold > 0
-          ? Math.round(((curr.perHousehold ?? 0) - prev.perHousehold) / prev.perHousehold * 100)
+          ? Math.round(
+              (((curr.perHousehold ?? 0) - prev.perHousehold) /
+                prev.perHousehold) *
+                100,
+            )
           : null;
       const pctIndividual =
         prev.perIndividual != null && prev.perIndividual > 0
-          ? Math.round(((curr.perIndividual ?? 0) - prev.perIndividual) / prev.perIndividual * 100)
+          ? Math.round(
+              (((curr.perIndividual ?? 0) - prev.perIndividual) /
+                prev.perIndividual) *
+                100,
+            )
           : null;
       yoyPerHousehold.push(pctHousehold);
       yoyPerIndividual.push(pctIndividual);
@@ -108,20 +142,33 @@ export default function ServiceExpensesPage() {
 
     return {
       overTime: {
-        type: 'bar',
+        type: "bar",
         data: {
           labels: filteredYears.map(String),
           datasets: [
-            { label: 'Expenses per household', data: perHouseholdData, backgroundColor: 'rgba(35, 54, 88, 0.8)', yAxisID: 'y' },
-            { label: 'Expenses per individual', data: perIndividualData, backgroundColor: 'rgba(240, 101, 30, 0.8)', yAxisID: 'y' },
+            {
+              label: "Expenses per household",
+              data: perHouseholdData,
+              backgroundColor: "rgba(35, 54, 88, 0.8)",
+              yAxisID: "y",
+            },
+            {
+              label: "Expenses per individual",
+              data: perIndividualData,
+              backgroundColor: "rgba(240, 101, 30, 0.8)",
+              yAxisID: "y",
+            },
           ],
         },
         options: {
           scales: {
             y: {
-              type: 'linear',
+              type: "linear",
               beginAtZero: true,
-              ticks: { callback: (v) => (typeof v === 'number' ? '$' + v.toLocaleString() : v) },
+              ticks: {
+                callback: (v) =>
+                  typeof v === "number" ? `$${v.toLocaleString()}` : v,
+              },
             },
           },
           plugins: {
@@ -130,7 +177,9 @@ export default function ServiceExpensesPage() {
               callbacks: {
                 label: (ctx) => {
                   const v = ctx.raw;
-                  return v != null ? `${ctx.dataset.label}: ${formatCurrency(v)}` : 'No data';
+                  return v != null
+                    ? `${ctx.dataset.label}: ${formatCurrency(v)}`
+                    : "No data";
                 },
               },
             },
@@ -138,33 +187,43 @@ export default function ServiceExpensesPage() {
         },
       },
       peoplePerHousehold: {
-        type: 'line',
+        type: "line",
         data: {
           labels: filteredYears.map(String),
-          datasets: [{
-            label: 'People per household',
-            data: peoplePerHouseholdData,
-            borderColor: 'rgba(35, 54, 88, 1)',
-            backgroundColor: 'rgba(35, 54, 88, 0.1)',
-            fill: true,
-            tension: 0.3,
-          }],
+          datasets: [
+            {
+              label: "People per household",
+              data: peoplePerHouseholdData,
+              borderColor: "rgba(35, 54, 88, 1)",
+              backgroundColor: "rgba(35, 54, 88, 0.1)",
+              fill: true,
+              tension: 0.3,
+            },
+          ],
         },
         options: { scales: { y: { beginAtZero: true } } },
       },
       yoyChange: {
-        type: 'bar',
+        type: "bar",
         data: {
           labels: yoyLabels,
           datasets: [
-            { label: 'Expense per household % change', data: yoyPerHousehold, backgroundColor: 'rgba(35, 54, 88, 0.8)' },
-            { label: 'Expense per individual % change', data: yoyPerIndividual, backgroundColor: 'rgba(240, 101, 30, 0.8)' },
+            {
+              label: "Expense per household % change",
+              data: yoyPerHousehold,
+              backgroundColor: "rgba(35, 54, 88, 0.8)",
+            },
+            {
+              label: "Expense per individual % change",
+              data: yoyPerIndividual,
+              backgroundColor: "rgba(240, 101, 30, 0.8)",
+            },
           ],
         },
         options: {
           scales: {
             y: {
-              ticks: { callback: (v) => (typeof v === 'number' ? v + '%' : v) },
+              ticks: { callback: (v) => (typeof v === "number" ? `${v}%` : v) },
             },
           },
           plugins: {
@@ -173,7 +232,9 @@ export default function ServiceExpensesPage() {
               callbacks: {
                 label: (ctx) => {
                   const v = ctx.raw;
-                  return v != null ? `${ctx.dataset.label}: ${v > 0 ? '+' : ''}${v}%` : 'No data';
+                  return v != null
+                    ? `${ctx.dataset.label}: ${v > 0 ? "+" : ""}${v}%`
+                    : "No data";
                 },
               },
             },
@@ -181,46 +242,49 @@ export default function ServiceExpensesPage() {
         },
       },
       totals: {
-        type: 'line',
+        type: "line",
         data: {
           labels: filteredYears.map(String),
           datasets: [
             {
-              label: 'Total expenses',
+              label: "Total expenses",
               data: expensesData,
-              borderColor: 'rgba(35, 54, 88, 1)',
-              backgroundColor: 'rgba(35, 54, 88, 0.1)',
+              borderColor: "rgba(35, 54, 88, 1)",
+              backgroundColor: "rgba(35, 54, 88, 0.1)",
               fill: true,
               tension: 0.3,
-              yAxisID: 'y',
+              yAxisID: "y",
             },
             {
-              label: 'Households',
+              label: "Households",
               data: householdsData,
-              borderColor: 'rgba(240, 101, 30, 1)',
+              borderColor: "rgba(240, 101, 30, 1)",
               tension: 0.3,
-              yAxisID: 'y1',
+              yAxisID: "y1",
             },
             {
-              label: 'Individuals',
+              label: "Individuals",
               data: individualsData,
-              borderColor: 'rgba(244, 159, 45, 1)',
+              borderColor: "rgba(244, 159, 45, 1)",
               tension: 0.3,
-              yAxisID: 'y1',
+              yAxisID: "y1",
             },
           ],
         },
         options: {
           scales: {
             y: {
-              type: 'linear',
-              position: 'left',
+              type: "linear",
+              position: "left",
               beginAtZero: true,
-              ticks: { callback: (v) => (typeof v === 'number' ? '$' + v.toLocaleString() : v) },
+              ticks: {
+                callback: (v) =>
+                  typeof v === "number" ? `$${v.toLocaleString()}` : v,
+              },
             },
             y1: {
-              type: 'linear',
-              position: 'right',
+              type: "linear",
+              position: "right",
               beginAtZero: true,
               grid: { drawOnChartArea: false },
             },
@@ -232,9 +296,9 @@ export default function ServiceExpensesPage() {
                 label: (ctx) => {
                   const v = ctx.raw;
                   if (v == null) {
-                    return 'No data';
+                    return "No data";
                   }
-                  if (ctx.dataset.label === 'Total expenses') {
+                  if (ctx.dataset.label === "Total expenses") {
                     return `Total expenses: ${formatCurrency(v)}`;
                   }
                   return `${ctx.dataset.label}: ${v.toLocaleString()}`;
@@ -253,8 +317,8 @@ export default function ServiceExpensesPage() {
       formatCurrency(r.expenses),
       r.households.toLocaleString(),
       r.individuals.toLocaleString(),
-      r.perHousehold != null ? formatCurrency(r.perHousehold) : '—',
-      r.perIndividual != null ? formatCurrency(r.perIndividual) : '—',
+      r.perHousehold != null ? formatCurrency(r.perHousehold) : "—",
+      r.perIndividual != null ? formatCurrency(r.perIndividual) : "—",
     ]);
   }, [rows]);
 
@@ -269,7 +333,8 @@ export default function ServiceExpensesPage() {
   if (!hasData) {
     return (
       <div class="loading">
-        No data available for the selected year range. Only years with 12 months of service data and financial records are included.
+        No data available for the selected year range. Only years with 12 months
+        of service data and financial records are included.
       </div>
     );
   }
@@ -284,29 +349,49 @@ export default function ServiceExpensesPage() {
         onYearStartChange={setYearStart}
         onYearEndChange={setYearEnd}
       />
-      <p class="chart-desc">Only years with 12 months of service data and financial records are included.</p>
+      <p class="chart-desc">
+        Only years with 12 months of service data and financial records are
+        included.
+      </p>
       <Metrics items={metrics} />
       <div class="grid">
         <Card title="Expenses per household & per individual" fullWidth>
-        <Chart config={chartConfigs.overTime} height="tall" />
-      </Card>
-      <div class="grid-half">
-        <Card title="People per household over time" desc="Individuals ÷ households by year">
-          <Chart config={chartConfigs.peoplePerHousehold} height="tall" />
+          <Chart config={chartConfigs.overTime} height="tall" />
         </Card>
-        <Card title="Year-over-year change in cost efficiency" desc="% change in expense per household and per individual vs prior year">
-          <Chart config={chartConfigs.yoyChange} height="tall" />
+        <div class="grid-half">
+          <Card
+            title="People per household over time"
+            desc="Individuals ÷ households by year"
+          >
+            <Chart config={chartConfigs.peoplePerHousehold} height="tall" />
+          </Card>
+          <Card
+            title="Year-over-year change in cost efficiency"
+            desc="% change in expense per household and per individual vs prior year"
+          >
+            <Chart config={chartConfigs.yoyChange} height="tall" />
+          </Card>
+        </div>
+        <Card
+          title="Total expenses, households & individuals"
+          desc="Raw totals over time for context"
+          fullWidth
+        >
+          <Chart config={chartConfigs.totals} height="tall" />
         </Card>
-      </div>
-      <Card title="Total expenses, households & individuals" desc="Raw totals over time for context" fullWidth>
-        <Chart config={chartConfigs.totals} height="tall" />
-      </Card>
-      <Card title="By year" fullWidth>
-        <DataTable
-          columns={['Year', 'Expenses', 'Households served', 'Individuals served', 'Expense per household', 'Expense per individual']}
-          rows={tableRows}
-        />
-      </Card>
+        <Card title="By year" fullWidth>
+          <DataTable
+            columns={[
+              "Year",
+              "Expenses",
+              "Households served",
+              "Individuals served",
+              "Expense per household",
+              "Expense per individual",
+            ]}
+            rows={tableRows}
+          />
+        </Card>
       </div>
     </>
   );

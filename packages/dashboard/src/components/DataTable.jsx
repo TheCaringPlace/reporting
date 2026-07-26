@@ -1,5 +1,3 @@
-import { formatCurrency } from '../lib/utils.js';
-
 export function DataTable({ columns, rows }) {
   return (
     <div class="table-wrapper">
@@ -15,7 +13,10 @@ export function DataTable({ columns, rows }) {
           {rows.map((row, i) => (
             <tr key={i}>
               {row.map((cell, j) => {
-                const c = typeof cell === 'object' && cell !== null && 'content' in cell ? cell : { content: cell };
+                const c =
+                  typeof cell === "object" && cell !== null && "content" in cell
+                    ? cell
+                    : { content: cell };
                 return (
                   <td key={j} class={c.className}>
                     {c.content}
