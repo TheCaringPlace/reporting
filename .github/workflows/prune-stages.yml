@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v7.0.0
         with:
           node-version-file: .nvmrc
+      - name: Install Dependencies
+        run: npm ci
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6.2.4
         with:
