@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
-    "sst": "^4.17.1"
+    "sst": "^4.17.2"
   }
 }
