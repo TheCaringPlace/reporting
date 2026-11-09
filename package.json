@@ -19,7 +19,7 @@
     "lint:fix:all": "biome check --write --unsafe ."
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.5",
+    "@biomejs/biome": "2.6.6",
     "sst": "^4.17.2"
   }
 }
